@@ -2,28 +2,64 @@
 #include <conio.h>
 using namespace std;
 
-void info(){
-  system("cls");
-  cout<<"indonesia hebat, poliban juara"<<endl;
-  getch();
-  }
+int i;
+int n;
+int *nilai = nullptr;
 
 void dMenu(){
 system("cls");
 cout<<"Aplikasi Tampilan Menu"<<"\n";       
-cout<<"1. Menu Pertama"<<"\n";            
-cout<<"2. Menu Kedua"<<"\n";            
-cout<<"3. Menu Ketiga"<<"\n";           
+cout<<"1. Melakukan input nilai array"<<"\n";            
+cout<<"2. Menampilkan array"<<"\n";            
+cout<<"3. Melakukan sorting pada nilai array"<<"\n";           
 cout<<"4. Informasi"<<"\n";            
 cout<<"5. Exit"<<"\n";           
-cout<<"Masukan angka :";        
+cout<<"Masukan angka: ";       
 }
 
-void mPertama(string pesan){
-system("cls");
-cout<<"hallo saya menu "<<pesan;
-getch();
-}
+void main1(){
+  system("cls"); 
+    cout << "Masukan index array: " << endl;
+    cin >> n;
+    
+    if(nilai != nullptr){
+      delete[] nilai;
+    }
+
+    nilai = new int[n];
+    for(i = 0; i < n; i++){
+      cout << "Masukan nilai index-" << i << ":";
+      cin >> nilai[i];
+    }
+    cout << "\nAnda sudah melakukan input, tekan untuk kembali ke menu" << endl;
+    getch();
+  }
+
+  void main2(){
+    system("cls");
+    if(nilai == nullptr || n <= 0){
+      cout << "Nilai array kosong, harap diisi";
+    }else{
+    cout << "Isi array: ";
+        for (i = 0; i < n; i++) {
+            cout << "\nindex-" << i << ": " << nilai[i];
+    }
+    }
+    cout << "\nTekan untuk kembali ke menu";
+    getch();
+    }
+
+  void main3(){
+    system("cls");
+    cout << "mantap";
+    getch();
+  }
+  
+  void main4(){
+    system("cls");
+    cout << "mantap";
+    getch();
+  }
 
 int main(){
 char pl;
@@ -33,24 +69,24 @@ do{
   switch (pl){
    case '1':
     /* code */
-    mPertama("pertama");
+    main1();
     break;
    case '2':
-    mPertama("ke- dua");
+    main2();
     /* code */ 
     break;  
    case '3':
-    mPertama("ke- tiga");
+    main3();
     /* code */
     break;  
    case '4':
-    info();
+    main4();
     /* code */
     break;  
   case '5':
     /* code */
     break;
-  
+
   default:
     system("cls");
     cout<<"Pilihan Tidak Tersedia";
