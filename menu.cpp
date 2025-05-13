@@ -53,17 +53,19 @@ void main1(){
 
   void main3(){
     system("cls");
+
+      if(nilai == nullptr || n <= 0){
+      cout << "===================================\n";
+      cout << "==Nilai array kosong, harap diisi==\n";
+      cout << "===================================\n";
+    }else{
     cout << "Selamat datang pada menu sorting";
     cout << "\n1. Ascending sort"<<"\n";            
     cout << "2. Descending sort"<<"\n";            
     cout << "Pilih opsi (1 atau 2): ";
-    cin >> c;
+    cin >> c;}
 
-    if(nilai == nullptr || n <= 0){
-      cout << "===================================\n";
-      cout << "==Nilai array kosong, harap diisi==\n";
-      cout << "===================================\n";
-    }else if(c == 1){
+      if(c == 1){
       for(i = 1; i < n; i++){
         temp = nilai[i];
         a = i - 1;
