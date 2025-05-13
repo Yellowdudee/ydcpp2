@@ -2,9 +2,9 @@
 #include <conio.h>
 using namespace std;
 
-int i;
-int n;
+int i, n, c, a, x;
 int *nilai = nullptr;
+int temp;
 
 void dMenu(){
 system("cls");
@@ -51,9 +51,62 @@ void main1(){
 
   void main3(){
     system("cls");
-    cout << "mantap";
-    getch();
+    cout << "Selamat datang pada menu sorting";
+    cout << "\n1. Ascending sort"<<"\n";            
+    cout << "2. Descending sort"<<"\n";            
+    cout << "Pilih opsi (1 atau 2): ";
+    cin >> c;           
+
+    if(c == 1){
+      for(i = 1; i < n; i++){
+        temp = nilai[i];
+        a = i - 1;
+
+        while(nilai[a] > temp && a >= 0){
+          nilai[a + 1] = nilai[a];
+          a--;
+        }
+        nilai[a + 1] = temp;
+
+        cout << "\nTahap-" << i << endl;
+        for(x = 0; x < n; x++){
+          cout << nilai[x] << " ";
+        }
+      }
+      cout << "\nHasil sortir ascending: " << endl;
+      for(int z = 0; z < n; z++){
+        cout << nilai[z] << " ";
+      }
   }
+    else if(c == 2){
+      for(i = 1; i < n; i++){
+        temp = nilai[i];
+        a = i - 1;
+
+        while(nilai[a] < temp && a >= 0){
+          nilai[a + 1] = nilai[a];
+          a--;
+        }
+        nilai[a + 1] = temp;
+
+        cout << "\nTahap-" << i << endl;
+        for(x = 0; x < n; x++){
+          cout << nilai[x] << " ";
+        }
+      }
+      cout << "\nHasil sortir descending: " << endl;
+      for(int z = 0; z < n; z++){
+        cout << nilai[z] << " ";
+      }
+      
+  }
+    else{
+      cout << "Pilihan tidak tersedia.";
+  }
+
+  cout << "\nTekan untuk kembali ke menu.";
+  getch();
+}
   
   void main4(){
     system("cls");
