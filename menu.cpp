@@ -38,7 +38,9 @@ void main1(){
   void main2(){
     system("cls");
     if(nilai == nullptr || n <= 0){
-      cout << "Nilai array kosong, harap diisi";
+      cout << "===================================\n";
+      cout << "==Nilai array kosong, harap diisi==\n";
+      cout << "===================================\n";
     }else{
     cout << "Isi array: ";
         for (i = 0; i < n; i++) {
@@ -55,9 +57,13 @@ void main1(){
     cout << "\n1. Ascending sort"<<"\n";            
     cout << "2. Descending sort"<<"\n";            
     cout << "Pilih opsi (1 atau 2): ";
-    cin >> c;           
+    cin >> c;
 
-    if(c == 1){
+    if(nilai == nullptr || n <= 0){
+      cout << "===================================\n";
+      cout << "==Nilai array kosong, harap diisi==\n";
+      cout << "===================================\n";
+    }else if(c == 1){
       for(i = 1; i < n; i++){
         temp = nilai[i];
         a = i - 1;
@@ -77,8 +83,7 @@ void main1(){
       for(int z = 0; z < n; z++){
         cout << nilai[z] << " ";
       }
-  }
-    else if(c == 2){
+  }else if(c == 2){
       for(i = 1; i < n; i++){
         temp = nilai[i];
         a = i - 1;
@@ -99,8 +104,7 @@ void main1(){
         cout << nilai[z] << " ";
       }
       
-  }
-    else{
+  }else{
       cout << "Pilihan tidak tersedia.";
   }
 
@@ -110,7 +114,8 @@ void main1(){
   
   void main4(){
     system("cls");
-    cout << "mantap";
+    cout << "Nama: Dzaki Ahmad Andreaz" << endl;
+    cout << "NIM : C030324115" << endl;
     getch();
   }
 
